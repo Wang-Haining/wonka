@@ -1,0 +1,5 @@
+reviewers,bar_clearing,non_bar_clearing,minimum_mean_distance,exact_pairs_possible
+2,19,32,0.5,False
+3,846,515,0.33333333333333304,False
+4,86,22,0.25,False
+5,6,0,,False

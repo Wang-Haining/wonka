@@ -1,0 +1,102 @@
+table,field,dtype,description
+submissions,year,int64,ICLR conference year.
+submissions,id,str,OpenReview submission ID from the source dataset.
+submissions,openreview_url,str,Public submission URL constructed from `id`.
+submissions,title,str,Submission title as represented in the source dataset.
+submissions,supplemental_reason,str,`excluded_by_upstream_abstract_length_filter` for the 26 recovered records; null otherwise.
+submissions,authors,object,Names already public in the source dataset. Empty when the source records the authors as `Anonymous`.
+submissions,raw_authors,str,Author field exactly as represented in the source dataset.
+submissions,author_status,str,"Source author availability; public source names, anonymous source names, withheld source license, or source metadata conflict."
+submissions,raw_decision,str,Decision label exactly as represented in the source dataset.
+submissions,decision,str,"Stable category: `accept`, `reject`, `withdrawn`, `desk_rejected`, or `workshop_invitation`."
+submissions,scores,object,"Numeric reviewer scores from the source dataset, with no reviewer aliases."
+submissions,n_scores,Int64,Number of values in `scores`.
+submissions,n_rev,Int64,Compatibility alias for `n_scores`; number of numeric reviews.
+submissions,core_field_license_status,str,Source and license boundary for the submission core fields.
+submissions,field_provenance,object,Field-level origin for supplemental metadata.
+submissions,source_metadata_status,str,"`available`, `withheld-source-license`, or `source_metadata_conflict`."
+submissions,semantic_scholar_id,str,Semantic Scholar paper ID supplied by SNOR v1.
+submissions,snor_linked,bool,"Whether SNOR v1 contains a linked record for `(year, id)`."
+submissions,external_identity_resolved,bool,At least one candidate passed the documented identity rules.
+submissions,identity_status,str,"`resolved`, `candidate_requires_review`, or `no_verified_candidate`."
+submissions,pending_candidates,int64,Candidate records still requiring identity review.
+submissions,citation_status,str,Reason the citation outcome is available or unavailable.
+submissions,citation_ready,bool,"The dated OpenAlex source contains a valid annual series for the verified target work(s), and the two-year calendar window is closed."
+submissions,citation_window_2y_closed,bool,"The release graph snapshot is after the two-year calendar window, independently of identity or citation availability."
+submissions,citation_window_3y_closed,bool,"The release graph snapshot is after the three-year calendar window, independently of identity or citation availability."
+submissions,citation_ready_3y,bool,A three-year total is available.
+submissions,citation_count_2y,Int64,Distinct citing works in conference year y and y+1; null when unavailable.
+submissions,citation_count_3y,Int64,Distinct citing works in y through y+2; null when unavailable.
+submissions,citation_provider,str,`OpenAlex_reference_graph` when a citation outcome is available.
+submissions,counted_openalex_ids,object,Verified OpenAlex manifestation IDs counted together after citing-work deduplication.
+submissions,citation_snapshot_date,str,Date of the source snapshot used for the annual series.
+submissions,citation_snapshot_basis,str,Whether the counting source is a dated snapshot.
+submissions,citation_observed_at,str,"Timestamp of citation processing, not the end of the outcome window."
+submissions,openalex_id,str,The counted OpenAlex work ID when exactly one manifestation is counted; null for multi-manifestation counts.
+submissions,identifiers,object,Public persistent identifiers from permitted source fields.
+submissions,work_family_id,str,Release-specific deterministic family label formed from shared verified persistent identifiers; later linkage corrections may change this label.
+submissions,submissions_in_family,Int64,Number of ICLR submissions in that verified work family.
+submissions,matching_candidates,int64,Accepted candidate records supporting the identity.
+submissions,provider_author_conflict,bool,Identity was independently verified despite a provider author-list conflict.
+submissions,semantic_scholar_id_status,str,"`verified_match`, `unverified_source_link`, `rejected_source_link`, or `not_supplied`; source identifiers are not automatically verified."
+submissions,source_conflict_type,str,Recorded type of conflict between source metadata.
+submissions,source_conflict_public_evidence,object,Permitted public evidence supporting the recorded conflict disposition.
+manifestations,year,int64,ICLR conference year.
+manifestations,id,str,OpenReview submission ID from the source dataset.
+manifestations,provider,str,Metadata provider for the external record.
+manifestations,work_id,str,Provider-native external work identifier.
+manifestations,identifiers,str,Public persistent identifiers from permitted source fields.
+manifestations,provenance,str,Source attribution for the relation.
+manifestations,manifestation_kind,str,"Recorded external-version type, when available."
+manifestations,relation_to_submission,str,Recorded relationship between the external work and the submission.
+manifestations,work_family_id,str,Release-specific deterministic family label formed from shared verified persistent identifiers; later linkage corrections may change this label.
+manifestations,title,str,Submission title as represented in the source dataset.
+manifestations,publication_year,float64,"External work publication year, when available."
+manifestations,retrieved_at,str,Timestamp at which the evidence was retrieved.
+manifestations,source_metadata_status,str,"`available`, `withheld-source-license`, or `source_metadata_conflict`."
+match_evidence,year,int64,ICLR conference year.
+match_evidence,id,str,OpenReview submission ID from the source dataset.
+match_evidence,provider,str,Metadata provider for the external record.
+match_evidence,work_id,str,Provider-native external work identifier.
+match_evidence,source_title,str,Submission title used for linkage.
+match_evidence,candidate_title,str,External candidate title used for linkage.
+match_evidence,matching_authors,int64,Number of normalized author matches used by the linkage check.
+match_evidence,smaller_author_count,int64,Size of the smaller author list used by the author-overlap check.
+match_evidence,publication_year,float64,"External work publication year, when available."
+match_evidence,normalized_title_exact,bool,Whether normalized submission and candidate titles agree exactly.
+match_evidence,discovery_title_similarity,float64,"Title-similarity score used during candidate discovery, not an acceptance decision."
+match_evidence,candidate_arxiv_id,str,Candidate arXiv identifier.
+match_evidence,status,str,Recorded candidate linkage status; not all evidence records represent accepted links.
+match_evidence,retrieved_at,str,Timestamp at which the evidence was retrieved.
+match_evidence,source_snapshot_date,str,Date of the provider snapshot associated with the evidence or count.
+match_evidence,response_hash,str,SHA-256 of the source response retained internally.
+match_evidence,candidate_doi,str,Candidate DOI.
+match_evidence,anchor_url,str,Public URL supplying additional identity evidence.
+match_evidence,anchor_identifier,str,Persistent identifier used as an identity anchor.
+match_evidence,independent_identity_witness_verified,object,Whether additional identity evidence was verified.
+match_evidence,public_field_redactions,str,Fields omitted to respect source redistribution terms.
+match_evidence,source_metadata_status,str,"`available`, `withheld-source-license`, or `source_metadata_conflict`."
+annual_citations,year,int64,ICLR conference year.
+annual_citations,id,str,OpenReview submission ID from the source dataset.
+annual_citations,openalex_id,str,The counted OpenAlex work ID when exactly one manifestation is counted; null for multi-manifestation counts.
+annual_citations,counted_openalex_ids,str,Verified OpenAlex manifestation IDs counted together after citing-work deduplication.
+annual_citations,citation_year,int64,Calendar publication year of the citing work.
+annual_citations,citations,int64,Distinct citing-work count for the submission and citation year.
+annual_citations,citation_provider,str,`OpenAlex_reference_graph` when a citation outcome is available.
+annual_citations,source_snapshot_date,str,Date of the provider snapshot associated with the evidence or count.
+annual_citations,edge_file_sha256,str,SHA-256 of the original reference-edge source used to derive this count.
+annual_citations,calendar_year_closed,bool,Whether the full citation calendar year ended before the snapshot.
+annual_citations,source_metadata_status,str,"`available`, `withheld-source-license`, or `source_metadata_conflict`."
+incoming_citation_edges,target_work_id,str,OpenAlex identifier of a verified cited version.
+incoming_citation_edges,citing_work_id,str,"OpenAlex identifier of the citing work, used for deduplication."
+incoming_citation_edges,citation_year,int32,Calendar publication year of the citing work.
+analysis_frame,year,int64,ICLR conference year.
+analysis_frame,id,str,OpenReview submission ID from the source dataset.
+analysis_frame,decision,str,Original source decision string used in analysis; explicit Reject defines the main rejected pool.
+analysis_frame,n_rev,int64,Compatibility alias for `n_scores`; number of numeric reviews.
+analysis_frame,mstar,float64,Estimated raw-score acceptance threshold from the frozen edition-specific model.
+analysis_frame,D1prime,float64,True when at least one reviewer score reaches the edition-specific estimated acceptance threshold.
+analysis_frame,D2,float64,"Gap between the highest and second-highest within-edition standardized scores, residualized on panel mean and reviewer count; frozen for resampling."
+analysis_frame,citation_count_2y,float64,Distinct citing works in conference year y and y+1; null when unavailable.
+analysis_frame,scores,object,"Numeric reviewer scores from the source dataset, with no reviewer aliases."
+analysis_frame,citation_count_3y,float64,Distinct citing works in y through y+2; null when unavailable.

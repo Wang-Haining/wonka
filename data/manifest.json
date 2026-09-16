@@ -1,0 +1,14 @@
+{
+  "dataset": "iclr-golden-ticket, 2017\u20132024 dataset",
+  "version": "1.0.0",
+  "citation_snapshot": "2026-06-26",
+  "sha256": {
+    "analysis_frame.parquet": "c0e209aec7d60618e0d6dfd34beadd5068f4f16896d6083be86c772e2ab502b1",
+    "annual_citations.parquet": "71b5b80110db370bc2480c7370d6b08a522e446009a1e82c17828a3242eff588",
+    "incoming_citation_edges.parquet": "283a3fa17e083b8091a0c06e0fe7f8d91591111206ba76cafb0649683d257288",
+    "manifestations.parquet": "9817a555b158692a4aef3a0aed78b14309bbf66a544d97e24e71db55fc34662a",
+    "match_evidence.parquet": "f045672ac097ffc7b8870e0f816a03e6d4279ecb4006f6e0f5f7dd48d44700cb",
+    "submissions.parquet": "6de749d08514318b0462cac229cae17e5ad81ac09b143b2bcfa34444efbba6a8",
+    "dictionary.csv": "62486179b1c52f510223c1b4bdf647fdd19e4fa73cef35b830feeb8c80131c87"
+  }
+}

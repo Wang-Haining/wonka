@@ -1,0 +1,13 @@
+window,year,champions,matched,both_resolved,treated_resolved,control_resolved,mean_score_difference,max_score_distance
+two_year_all,2017,54,31,31,31,31,0.0,0.0
+two_year_all,2018,270,81,74,78,77,0.0,0.0
+two_year_all,2019,545,122,118,121,119,0.0,0.0
+two_year_all,2021,634,376,357,364,369,0.0,0.0
+two_year_all,2022,1063,89,27,53,47,0.0,0.0
+two_year_all,2023,1528,127,35,70,70,0.0,0.0
+two_year_all,2024,2488,186,56,103,97,0.0,0.0
+three_year_original,2017,54,31,31,31,31,0.0,0.0
+three_year_original,2018,270,81,74,78,77,0.0,0.0
+three_year_original,2019,545,122,118,121,119,0.0,0.0
+three_year_original,2021,634,376,357,364,369,0.0,0.0
+three_year_original,2022,1063,89,27,53,47,0.0,0.0
