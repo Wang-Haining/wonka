@@ -1,8 +1,12 @@
-"""Figure 2: what each allocation rule buys.
+"""Render the allocation-results figure from frozen aggregate estimates.
 
-a  yield against budget, two-year window, five rules
-b  three-year window at a 10% budget
-c  three assumptions about submissions with no citation record
+Run from the repository root with Python 3.12::
+
+    python figures/make_figure2_results.py
+
+Input: results/estimates.csv. Outputs: output/figures/figure2_results.pdf and .png.
+Panels show two-year yields across budgets, three-year results at a 10% budget,
+and the three missing-outcome assignments.
 """
 
 import pathlib

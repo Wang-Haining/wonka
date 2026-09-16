@@ -1,10 +1,13 @@
-"""Figure 3: where the advantage goes, and how the two disagreement rules compare.
+"""Render the score-variance and supplementary adjusted-highest-score figures.
 
-a  the highest single score across budgets, as ranked and after the panel mean
-   and the number of reviewers are removed from it
-b  paired contrasts at a 10% budget, variance against lottery / panel mean /
-   minority support, in four nested frames
-c  the variance rule's single-edition yields at a 10% budget
+Run from the repository root with Python 3.12::
+
+    python figures/make_figure3_mechanism.py
+
+Input: results/estimates.csv. Outputs in output/figures/: figure3_mechanism.pdf
+and .png, plus figureS1_adjusted_maximum.pdf and .png. The main figure shows
+paired score-variance comparisons and edition-specific yields. The supplementary
+figure compares highest-score ranking before and after linear adjustment.
 """
 
 import pathlib

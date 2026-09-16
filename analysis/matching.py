@@ -1,4 +1,15 @@
-"""Compare bar-clearing rejections using greedy matching and fixed-pair bootstrap."""
+"""Compare bar-clearing rejections using greedy matching and fixed-pair bootstrap.
+
+Run from the repository root with Python 3.12::
+
+    python analysis/matching.py
+    python analysis/matching.py --caliper 0.25
+
+Input: data/analysis_frame.parquet. Outputs: output/D1_exact_through_2024/
+and output/D1_through_2024/, respectively. Both analyses exclude 2020.
+The default matches exactly on edition, reviewer count, and panel mean.
+The sensitivity analysis allows panel means to differ by at most 0.25 points.
+"""
 
 import argparse
 from pathlib import Path

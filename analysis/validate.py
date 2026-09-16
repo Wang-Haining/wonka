@@ -1,4 +1,16 @@
-"""Validate the distributed dataset and optionally reconcile reproduced results."""
+"""Validate the distributed dataset and optionally reconcile reproduced results.
+
+Run from the repository root with Python 3.12::
+
+    python analysis/validate.py
+    python analysis/validate.py --results
+
+The first command checks the supplied data and checksums. Before running the
+second, run ranking.py for both citation windows with and without --include-2020,
+and matching.py with its default and --caliper 0.25 settings. Result validation
+compares output/ against results/ with numeric tolerance 1e-9. Checks print a
+summary and raise an error on failure; neither command modifies reference files.
+"""
 
 import argparse
 import hashlib

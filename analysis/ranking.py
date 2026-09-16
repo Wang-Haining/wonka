@@ -1,7 +1,18 @@
 """Reproduce within-edition ranking yields and paired bootstrap intervals.
 
-Minority-support scores are frozen in the analysis dataset. The adjusted highest
-score is refitted in each bootstrap draw. No network access is required.
+Run from the repository root with Python 3.12::
+
+    python analysis/ranking.py
+    python analysis/ranking.py --window 3
+    python analysis/ranking.py --include-2020
+    python analysis/ranking.py --window 3 --include-2020
+    python analysis/ranking.py --through 2022
+    python analysis/ranking.py --through 2023
+
+Input: data/analysis_frame.parquet. Outputs: output/<analysis-frame>/.
+The default excludes 2020; --include-2020 runs the inclusion sensitivity analysis.
+The --through option selects nested two-year samples. Minority-support scores
+remain fixed; the adjusted highest-score regression is refitted in each draw.
 """
 
 import argparse
