@@ -78,7 +78,7 @@ def panel_a(ax):
 
 
 FRAMES = [
-    ("two_year_full", "Two-year, 2017-2024"),
+    ("two_year_full", "Two-year, 2017–2024"),
     ("two_year_through_2023", "Two-year, through 2023"),
     ("two_year_early", "Two-year, through 2022"),
     ("three_year_early", "Three-year, through 2022"),
