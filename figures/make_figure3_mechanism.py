@@ -85,8 +85,8 @@ FRAMES = [
 ]
 COMPS = [
     ("lottery", "lottery", VAR),
-    ("mean", "panel mean", MEAN),
-    ("D2", "minority support", FOCAL),
+    ("mean", "panel mean", VAR),
+    ("D2", "minority support", VAR),
 ]
 
 
