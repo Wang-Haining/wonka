@@ -84,9 +84,9 @@ FRAMES = [
     ("three_year_early", "Three-year, through 2022"),
 ]
 COMPS = [
-    ("lottery", "lottery", VAR),
-    ("mean", "panel mean", VAR),
-    ("D2", "minority support", VAR),
+    ("lottery", "lottery", RULE_COLOUR["Lottery"]),
+    ("mean", "panel mean", MEAN),
+    ("D2", "minority support", FOCAL),
 ]
 
 
