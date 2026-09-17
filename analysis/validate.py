@@ -113,6 +113,22 @@ def validate_results():
                 rtol=1e-9,
             )
             checked += 1
+    paired_keys = ["budget_pct", "rule", "comparator", "scenario"]
+    paired_reference = (
+        pd.read_csv(ROOT / "results/paired_comparisons_all_budgets.csv")
+        .set_index(paired_keys)
+        .sort_index()
+    )
+    paired_actual = (
+        pd.read_csv(ROOT / "output/two_year_through_2024/paired_comparisons.csv")
+        .set_index(paired_keys)
+        .sort_index()
+    )
+    assert len(paired_reference) == 80, "Expected 80 paired comparisons"
+    pd.testing.assert_frame_equal(
+        paired_actual, paired_reference, check_exact=False, atol=1e-9, rtol=1e-9
+    )
+    print("PASS: all 80 paired comparisons match the reference results.")
     reference = pd.read_csv(ROOT / "results/include2020/comparisons.csv")
     for window, folder in [
         ("two_year", "two_year_through_2024_including_2020"),

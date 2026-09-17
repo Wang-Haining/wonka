@@ -217,6 +217,7 @@ def main():
     for i, budget in enumerate([1, 2, 5, 10]):
         for left, right in [
             ("mean", "D2"),
+            ("max", "D2"),
             ("variance", "D2"),
             ("variance", "mean"),
             ("max_resid", "D2"),
